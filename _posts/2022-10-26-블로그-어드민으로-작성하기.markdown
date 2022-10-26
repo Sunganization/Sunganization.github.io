@@ -1,0 +1,58 @@
+---
+title: jekyll 블로그 로컬에서 실행해서 포스팅하기
+layout: post
+date: '2022-10-26 19:20:23 +0900'
+category: blog
+---
+
+# Jekyll 설치
+```ssh
+sudo gem install bundler jekyll
+```
+
+# 로컬에 git clone 하기
+원하는 위치로 이동해서 순서대로 아래 명령어 실행한다.
+```ssh
+git clone git@github.com:Sunganization/Sunganization.github.io.git  
+````
+```ssh
+cd sunganization.github.io  
+```
+```ssh
+bundle init  
+```
+```ssh
+bundle add jekyll  
+```
+
+# 로컬 서버 실행
+```ssh
+jekyll serve  
+```
+안되면
+```ssh
+bundle exec jekyll serve  
+```
+
+
+Jekyll을 localhost:4000에서 접속 가능하다.
+
+![]({{ 'public/img/스크린샷 2022-10-26 17.22.12.png' | relative_url }})
+
+## 어드민 서버 접속
+```ssh
+vi Gemfile  
+```
+마지막 위치에 아래 명령어 추가
+```ssh
+gem 'jekyll-admin', group: :jekyll_plugins  
+```
+저장 후 plugin 설치
+```ssh
+bundle install  
+```
+로컬 서버를 재 실행한다.
+
+localhost:4000/admin
+아래처럼 어드민에서 포스팅이 가능하다.
+![]({{ 'public/img/스크린샷 2022-10-26 17.24.50.png' | relative_url }})
