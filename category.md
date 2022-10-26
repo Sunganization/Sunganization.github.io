@@ -1,5 +1,6 @@
 ---
-layout: category
 title: Category
-permalink: /category/
+layout: category
+permalink: "/category/"
 ---
+
